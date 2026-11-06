@@ -1,2 +1,9 @@
 .env
 .env.*
+
+*__pycache__*
+data_parquet.zip
+data_parquet/
+
+Archive.zip
+Archive/

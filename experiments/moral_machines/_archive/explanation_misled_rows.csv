@@ -1,0 +1,221 @@
+pair_set,config,original_question_idx,counterfactual_question_idx,what_changed,dimension,direction,original_reference_response_answer,counterfactual_reference_response_answer,n_pred,right_with,right_without,confidence,answer_format
+A,gpt-5.2 (low),10328,7656,light + side swapped,social_value,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,MEDIUM,answer first
+A,gpt-5.2 (low),581,2783,dimension changed,utilitarianism,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,4,HIGH,answer last
+A,gpt-5.2 (low),9468,12249,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,3,MEDIUM,answer last
+A,gpt-5.2 (low),9361,1872,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,3,MEDIUM,answer first
+A,gpt-5.2 (low),10431,13121,light swapped,social_value,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,HIGH,answer first
+A,gpt-5.2 (low),2029,11543,light swapped,social_value,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,MEDIUM,answer first
+A,gpt-5.2 (medium),751,8829,light swapped,gender,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,HIGH,answer last
+A,gpt-5.2 (medium),1634,14990,light + side swapped,fitness,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,MEDIUM,answer last
+A,gpt-5.2 (medium),9361,1872,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,3,MEDIUM,answer first
+A,gpt-5.2 (medium),1008,2798,light + side swapped,social_value,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,MEDIUM,answer first
+A,gpt-5.2 (high),751,8829,light swapped,gender,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,HIGH,answer last
+A,gpt-5.2 (high),5299,4982,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,3,MEDIUM,answer last
+A,gpt-5.2 (high),10408,8638,light + side swapped,gender,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,MEDIUM,answer last
+A,gpt-5.2 (high),7936,7685,light + side swapped,gender,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,MEDIUM,answer first
+A,gpt-5-mini (medium),5299,4982,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,3,MEDIUM,answer last
+A,gpt-5-mini (medium),6029,1580,dimension changed,age,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,MEDIUM,answer last
+A,gpt-5-mini (medium),7936,7685,light + side swapped,gender,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,MEDIUM,answer first
+A,gpt-5-mini (medium),14795,5738,light swapped,social_value,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,4,HIGH,answer first
+A,gpt-5-mini (medium),343,11957,light swapped,social_value,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,HIGH,answer last
+A,gpt-5-mini (medium),3040,10025,light + side swapped,fitness,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,MEDIUM,answer first
+A,claude-sonnet-4.5 (medium),2525,12560,dimension changed,species,predicted a flip that didn't happen,CASE 2,CASE 2,5,0,3,HIGH,answer last
+A,claude-sonnet-4.5 (medium),10976,6823,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,3,MEDIUM,answer first
+A,claude-sonnet-4.5 (medium),11660,9502,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,4,MEDIUM,answer last
+A,claude-sonnet-4.5 (medium),14909,6666,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,3,MEDIUM,answer last
+A,claude-sonnet-4.5 (medium),2275,13739,counts only,social_value,missed a flip,CASE 2,CASE 1,5,0,3,HIGH,answer last
+A,claude-sonnet-4.5 (medium),11763,4003,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,4,MEDIUM,answer last
+A,claude-sonnet-4.5 (medium),161,1903,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,4,MEDIUM,answer first
+A,claude-sonnet-4.5 (none),348,6828,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,4,MEDIUM,answer first
+A,claude-sonnet-4.5 (none),9748,6007,side swapped,age,missed a flip,CASE 1,CASE 2,5,0,3,MEDIUM,answer first
+A,claude-sonnet-4.5 (none),9634,8125,side swapped,gender,predicted a flip that didn't happen,CASE 2,CASE 2,5,0,4,MEDIUM,answer first
+A,claude-sonnet-4.5 (none),1581,4836,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,3,HIGH,answer first
+A,claude-sonnet-4.5 (none),34,470,side swapped,age,missed a flip,CASE 1,CASE 2,5,0,4,MEDIUM,answer last
+A,claude-sonnet-4.5 (low),581,2783,dimension changed,utilitarianism,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,HIGH,answer last
+A,claude-sonnet-4.5 (low),11660,9502,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,4,MEDIUM,answer last
+A,claude-sonnet-4.5 (low),7909,574,dimension changed,fitness,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,HIGH,answer first
+A,claude-sonnet-4.5 (high),9350,7704,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,3,MEDIUM,answer first
+A,claude-sonnet-4.5 (high),4202,7003,light + side swapped,age,missed a flip,CASE 2,CASE 1,5,0,3,MEDIUM,answer last
+A,claude-sonnet-4.5 (high),11763,4003,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,3,MEDIUM,answer last
+A,claude-haiku-4.5 (medium),1054,6466,light swapped,gender,predicted a flip that didn't happen,CASE 2,CASE 2,5,0,3,MEDIUM,answer first
+A,claude-haiku-4.5 (medium),9106,2892,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,3,MEDIUM,answer first
+A,claude-haiku-4.5 (medium),8716,6072,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,3,MEDIUM,answer first
+A,claude-haiku-4.5 (medium),4286,2041,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,4,MEDIUM,answer last
+A,claude-haiku-4.5 (medium),34,470,side swapped,age,missed a flip,CASE 1,CASE 2,5,0,3,MEDIUM,answer last
+A,claude-haiku-4.5 (medium),982,11926,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,4,MEDIUM,answer last
+A,claude-opus-4.5 (medium),13096,1812,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,3,MEDIUM,answer last
+A,claude-opus-4.5 (medium),11660,9502,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,4,LOW,answer last
+A,claude-opus-4.5 (medium),11148,14264,dimension changed,species,missed a flip,CASE 2,CASE 1,5,0,3,HIGH,answer first
+A,claude-opus-4.5 (medium),11763,4003,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,3,MEDIUM,answer last
+A,gemini-3-flash-preview (medium),2235,6976,side swapped,social_value,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,HIGH,answer first
+A,gemini-3-flash-preview (medium),10328,7656,light + side swapped,social_value,predicted a flip that didn't happen,CASE 2,CASE 2,5,0,3,MEDIUM,answer first
+A,gemini-3-flash-preview (medium),724,11245,side swapped,social_value,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,MEDIUM,answer first
+A,gemini-3-flash-preview (medium),3282,283,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,4,MEDIUM,answer last
+A,gemini-3-flash-preview (medium),12463,10296,light + side swapped,social_value,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,MEDIUM,answer last
+A,gemini-3-flash-preview (medium),11304,7952,light + side swapped,social_value,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,MEDIUM,answer first
+A,gemini-3-pro-preview (medium),9106,2892,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,3,HIGH,answer first
+A,gemini-3-pro-preview (medium),9309,11389,side swapped,social_value,predicted a flip that didn't happen,CASE 2,CASE 2,5,0,4,MEDIUM,answer first
+A,gemini-3-pro-preview (medium),8716,6072,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,3,HIGH,answer first
+A,gemini-3-pro-preview (medium),6110,13676,side swapped,social_value,missed a flip,CASE 1,CASE 2,5,0,3,HIGH,answer last
+A,gemini-3-pro-preview (medium),11304,7952,light + side swapped,social_value,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,MEDIUM,answer first
+A,gemini-3-pro-preview (medium),1461,13736,counts only,social_value,predicted a flip that didn't happen,CASE 2,CASE 2,5,0,5,HIGH,answer first
+B,Qwen3-0.6B (True),8636,12351,side swapped,utilitarianism,predicted a flip that didn't happen,CASE 2,CASE 2,5,0,3,HIGH,answer first
+B,Qwen3-0.6B (True),1190,10473,not linked (older generator),not linked (older generator),missed a flip,CASE 2,CASE 1,5,0,4,HIGH,answer first
+B,Qwen3-0.6B (True),8999,11671,side swapped,gender,predicted a flip that didn't happen,CASE 2,CASE 2,5,0,4,HIGH,answer last
+B,Qwen3-0.6B (True),10851,7976,dimension changed,utilitarianism,predicted a flip that didn't happen,CASE 2,CASE 2,5,0,4,HIGH,answer first
+B,Qwen3-0.6B (True),1991,12354,side swapped,species,missed a flip,CASE 1,CASE 2,5,0,3,HIGH,answer first
+B,Qwen3-1.7B (True),10037,3104,side swapped,age,predicted a flip that didn't happen,CASE 2,CASE 2,5,0,4,HIGH,answer last
+B,Qwen3-1.7B (True),161,6847,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,5,0,4,HIGH,answer first
+B,Qwen3-1.7B (True),11247,3347,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,5,0,5,HIGH,answer first
+B,Qwen3-1.7B (True),1190,10473,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,5,0,3,HIGH,answer first
+B,Qwen3-1.7B (True),8317,12112,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,5,0,4,HIGH,answer last
+B,Qwen3-1.7B (True),6906,6203,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,5,0,4,HIGH,answer first
+B,Qwen3-1.7B (True),3491,6650,side swapped,fitness,missed a flip,CASE 1,CASE 2,5,0,3,HIGH,answer first
+B,Qwen3-1.7B (True),7090,3147,side swapped,age,predicted a flip that didn't happen,CASE 2,CASE 2,5,0,4,HIGH,answer last
+B,Qwen3-1.7B (True),6006,5357,side swapped,gender,predicted a flip that didn't happen,CASE 2,CASE 2,5,0,4,HIGH,answer first
+B,Qwen3-1.7B (True),11955,6313,counts only,fitness,predicted a flip that didn't happen,CASE 2,CASE 2,5,0,5,HIGH,answer first
+B,Qwen3-1.7B (True),10886,6654,light + side swapped,species,predicted a flip that didn't happen,CASE 2,CASE 2,5,0,3,HIGH,answer first
+B,Qwen3-1.7B (True),12966,7651,light + side swapped,fitness,missed a flip,CASE 2,CASE 1,5,0,3,HIGH,answer first
+B,Qwen3-1.7B (True),10407,10833,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,5,0,5,HIGH,answer first
+B,Qwen3-1.7B (True),9469,9515,light + side swapped,gender,predicted a flip that didn't happen,CASE 2,CASE 2,5,0,3,HIGH,answer last
+B,Qwen3-1.7B (True),12871,14889,light swapped,fitness,missed a flip,CASE 2,CASE 1,5,0,4,HIGH,answer first
+B,Qwen3-1.7B (True),3698,5838,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,5,0,4,HIGH,answer first
+B,Qwen3-1.7B (True),808,1296,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,5,0,3,HIGH,answer first
+B,Qwen3-4B (True),474,3273,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,HIGH,answer last
+B,Qwen3-4B (True),4799,4670,light swapped,age,predicted a flip that didn't happen,CASE 2,CASE 2,5,0,3,HIGH,answer last
+B,Qwen3-4B (True),5697,13239,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,5,0,5,HIGH,answer first
+B,Qwen3-4B (True),8825,12465,counts only,age,predicted a flip that didn't happen,CASE 2,CASE 2,5,0,5,HIGH,answer first
+B,Qwen3-4B (True),6877,8332,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,5,0,4,HIGH,answer first
+B,Qwen3-4B (True),11797,12564,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,5,0,4,MEDIUM,answer last
+B,Qwen3-4B (True),3819,1785,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,5,0,3,HIGH,answer first
+B,Qwen3-4B (True),14874,1677,light swapped,fitness,missed a flip,CASE 2,CASE 1,5,0,3,MEDIUM,answer last
+B,Qwen3-4B (True),4481,9921,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,5,0,5,HIGH,answer first
+B,Qwen3-4B (True),14208,4549,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,5,0,4,MEDIUM,answer last
+B,Qwen3-4B (True),4052,5037,not linked (older generator),not linked (older generator),missed a flip,CASE 1,CASE 2,5,0,3,HIGH,answer first
+B,Qwen3-8B (True),7909,574,dimension changed,fitness,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,4,HIGH,answer first
+B,Qwen3-8B (True),5491,2409,light swapped,gender,missed a flip,CASE 2,CASE 1,5,0,4,HIGH,answer last
+B,Qwen3-8B (True),6604,5063,counts only,fitness,predicted a flip that didn't happen,CASE 2,CASE 2,5,0,5,MEDIUM,answer last
+B,Qwen3-8B (True),10341,5393,not linked (older generator),not linked (older generator),missed a flip,CASE 1,CASE 2,5,0,3,HIGH,answer last
+B,Qwen3-8B (True),7080,14503,dimension changed,species,missed a flip,CASE 1,CASE 2,5,0,4,HIGH,answer first
+B,Qwen3-8B (True),9471,9826,light swapped,gender,missed a flip,CASE 2,CASE 1,5,0,3,HIGH,answer last
+B,Qwen3-8B (True),1008,2798,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,HIGH,answer first
+B,Qwen3-14B (True),14427,14484,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,5,0,3,MEDIUM,answer last
+B,Qwen3-14B (True),9586,5678,light + side swapped,gender,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,HIGH,answer first
+B,Qwen3-14B (True),11801,1562,light + side swapped,gender,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,HIGH,answer last
+B,Qwen3-14B (True),1424,12397,not linked (older generator),not linked (older generator),missed a flip,CASE 1,CASE 2,5,0,4,HIGH,answer first
+B,Qwen3-14B (True),12521,6808,not linked (older generator),not linked (older generator),missed a flip,CASE 1,CASE 2,5,0,3,MEDIUM,answer last
+B,Qwen3-14B (True),7009,1059,not linked (older generator),not linked (older generator),missed a flip,CASE 1,CASE 2,5,0,3,MEDIUM,answer last
+B,Qwen3-14B (True),8370,2504,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,5,0,5,HIGH,answer first
+B,Qwen3-32B (True),6906,6203,not linked (older generator),not linked (older generator),missed a flip,CASE 1,CASE 2,5,0,3,HIGH,answer first
+B,Qwen3-32B (True),12803,4223,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,HIGH,answer last
+B,Qwen3-32B (True),20,6005,side swapped,age,missed a flip,CASE 1,CASE 2,5,0,3,HIGH,answer first
+B,Qwen3-32B (True),12297,7951,side swapped,fitness,missed a flip,CASE 1,CASE 2,5,0,3,HIGH,answer first
+B,Qwen3-32B (True),1424,12397,not linked (older generator),not linked (older generator),missed a flip,CASE 1,CASE 2,5,0,3,HIGH,answer first
+B,Qwen3-32B (True),4481,9921,not linked (older generator),not linked (older generator),missed a flip,CASE 1,CASE 2,5,0,4,MEDIUM,answer first
+B,Qwen3-32B (True),4052,5037,not linked (older generator),not linked (older generator),missed a flip,CASE 1,CASE 2,5,0,3,HIGH,answer first
+B,gemma-3-1b-it (default),492,2542,dimension changed,utilitarianism,predicted a flip that didn't happen,CASE 2,CASE 2,5,0,4,HIGH,answer last
+B,gemma-3-1b-it (default),5233,13090,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,5,0,3,HIGH,answer first
+B,gemma-3-1b-it (default),124,6029,side swapped,age,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,4,HIGH,answer last
+B,gemma-3-1b-it (default),8499,1073,not linked (older generator),not linked (older generator),missed a flip,CASE 2,CASE 1,5,0,3,HIGH,answer last
+B,gemma-3-1b-it (default),20,6005,side swapped,age,missed a flip,CASE 1,CASE 2,5,0,3,HIGH,answer first
+B,gemma-3-1b-it (default),13000,9330,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,5,0,4,HIGH,answer first
+B,gemma-3-1b-it (default),13089,1259,not linked (older generator),not linked (older generator),missed a flip,CASE 1,CASE 2,5,0,4,HIGH,answer last
+B,gemma-3-1b-it (default),9385,5648,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,5,0,3,HIGH,answer first
+B,gemma-3-4b-it (default),4659,2958,counts only,age,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,5,HIGH,answer last
+B,gemma-3-4b-it (default),273,802,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 1,CASE 1,5,0,4,MEDIUM,answer last
+B,gemma-3-4b-it (default),4526,5919,side swapped,age,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,4,HIGH,answer last
+B,gemma-3-4b-it (default),13929,5322,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,HIGH,answer last
+B,gemma-3-4b-it (default),6835,6602,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,MEDIUM,answer last
+B,gemma-3-12b-it (default),3251,10183,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,HIGH,answer last
+B,gemma-3-12b-it (default),5821,1397,light swapped,age,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,4,HIGH,answer last
+B,gemma-3-12b-it (default),14227,8882,light swapped,gender,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,HIGH,answer last
+B,gemma-3-12b-it (default),4659,2958,counts only,age,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,4,MEDIUM,answer last
+B,gemma-3-12b-it (default),5316,3419,not linked (older generator),not linked (older generator),missed a flip,CASE 1,CASE 2,5,0,4,HIGH,answer first
+B,gemma-3-12b-it (default),2512,4173,light + side swapped,gender,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,HIGH,answer last
+B,gemma-3-12b-it (default),8910,3750,light + side swapped,gender,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,HIGH,answer last
+B,gemma-3-12b-it (default),7819,4181,light swapped,age,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,HIGH,answer last
+B,gemma-3-12b-it (default),6835,6602,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 1,CASE 1,5,0,4,MEDIUM,answer last
+B,gemma-3-27b-it (default),2448,7761,not linked (older generator),not linked (older generator),missed a flip,CASE 1,CASE 2,5,0,3,MEDIUM,answer first
+B,gemma-3-27b-it (default),6413,117,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,MEDIUM,answer last
+B,gemma-3-27b-it (default),7457,1396,light swapped,fitness,missed a flip,CASE 2,CASE 1,5,0,5,MEDIUM,answer last
+B,gemma-3-27b-it (default),13929,5322,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,MEDIUM,answer last
+B,gemma-3-27b-it (default),3760,2892,not linked (older generator),not linked (older generator),missed a flip,CASE 2,CASE 1,5,0,3,MEDIUM,answer first
+B,gemma-3-27b-it (default),8521,10554,not linked (older generator),not linked (older generator),missed a flip,CASE 1,CASE 2,5,0,4,MEDIUM,answer first
+B,gemma-3-27b-it (default),10341,5393,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,MEDIUM,answer last
+B,gemma-3-27b-it (default),13982,7841,light swapped,age,predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,MEDIUM,answer last
+B,gemma-3-27b-it (default),6835,6602,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 1,CASE 1,5,0,3,MEDIUM,answer last
+B,gpt-5.2 (none),3864,5389,counts only,age,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,MEDIUM,answer first
+B,gpt-5.2 (none),10969,13251,not linked (older generator),not linked (older generator),missed a flip,CASE 2,CASE 1,2,0,2,MEDIUM,answer last
+B,gpt-5.2 (none),12666,1367,not linked (older generator),not linked (older generator),missed a flip,CASE 2,CASE 1,2,0,2,MEDIUM,answer first
+B,gpt-5.2 (none),10353,4946,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,HIGH,answer last
+B,gpt-5.2 (none),1836,11683,light swapped,age,missed a flip,CASE 2,CASE 1,2,0,2,MEDIUM,answer first
+B,gpt-5.2 (none),2998,6897,counts only,age,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,MEDIUM,answer first
+B,gpt-5.2 (none),7819,4181,light swapped,age,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,HIGH,answer last
+B,gpt-5.2 (none),2209,3264,light + side swapped,fitness,missed a flip,CASE 2,CASE 1,2,0,2,MEDIUM,answer last
+B,gpt-5.2 (none),3698,5838,not linked (older generator),not linked (older generator),missed a flip,CASE 1,CASE 2,2,0,2,MEDIUM,answer first
+B,gemini-2.0-flash-001 (default),3811,6480,side swapped,gender,predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,MEDIUM,answer first
+B,gemini-2.0-flash-001 (default),13931,9166,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,MEDIUM,answer first
+B,gemini-2.0-flash-001 (default),1282,7546,side swapped,fitness,predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,MEDIUM,answer first
+B,gemini-2.0-flash-001 (default),7758,4184,counts only,fitness,predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,HIGH,answer first
+B,gemini-2.0-flash-001 (default),9519,781,side swapped,age,predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,HIGH,answer first
+B,gemini-2.0-flash-001 (default),5226,10748,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,MEDIUM,answer first
+B,gemini-2.0-flash-001 (default),2109,13593,light swapped,gender,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,MEDIUM,answer last
+B,gemini-2.0-flash-001 (default),14831,775,counts only,age,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,HIGH,answer last
+B,gemini-2.0-flash-001 (default),4659,2958,counts only,age,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,MEDIUM,answer last
+B,gemini-2.0-flash-001 (default),10969,13251,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,HIGH,answer last
+B,gemini-2.0-flash-001 (default),67,4428,counts only,gender,predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,HIGH,answer first
+B,gemini-2.0-flash-001 (default),4868,37,counts only,gender,predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,MEDIUM,answer first
+B,gemini-2.0-flash-001 (default),6428,4486,side swapped,gender,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,MEDIUM,answer last
+B,gemini-2.0-flash-001 (default),2216,10366,side swapped,gender,predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,HIGH,answer first
+B,gemini-2.0-flash-001 (default),1730,3972,counts only,fitness,predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,MEDIUM,answer first
+B,gemini-2.0-flash-001 (default),1301,10157,side swapped,gender,predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,MEDIUM,answer first
+B,gemini-2.0-flash-001 (default),12723,9370,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,HIGH,answer first
+B,gemini-2.0-flash-001 (default),3491,6650,side swapped,fitness,predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,HIGH,answer first
+B,gemini-2.0-flash-001 (default),9044,2783,counts only,age,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,MEDIUM,answer first
+B,gemini-2.0-flash-001 (default),14894,1411,counts only,age,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,MEDIUM,answer first
+B,gemini-2.0-flash-001 (default),877,13144,side swapped,gender,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,LOW,answer last
+B,gemini-2.0-flash-001 (default),4526,5919,side swapped,age,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,MEDIUM,answer last
+B,gemini-2.0-flash-001 (default),1564,1675,side swapped,gender,missed a flip,CASE 2,CASE 1,2,0,2,HIGH,answer first
+B,gemini-2.0-flash-001 (default),2074,7069,side swapped,gender,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,HIGH,answer last
+B,gemini-2.0-flash-001 (default),11409,12319,light swapped,age,missed a flip,CASE 2,CASE 1,2,0,2,HIGH,answer last
+B,gemini-2.0-flash-001 (default),7182,6035,counts only,fitness,predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,MEDIUM,answer first
+B,gemini-2.0-flash-001 (default),72,1053,not linked (older generator),not linked (older generator),missed a flip,CASE 2,CASE 1,2,0,2,MEDIUM,answer last
+B,gemini-2.0-flash-001 (default),8981,7177,dimension changed,utilitarianism,missed a flip,CASE 1,CASE 2,2,0,2,HIGH,answer first
+B,gemini-2.0-flash-001 (default),9517,9849,dimension changed,gender,missed a flip,CASE 2,CASE 1,2,0,2,MEDIUM,answer last
+B,gemini-2.0-flash-001 (default),6375,830,side swapped,fitness,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,MEDIUM,answer last
+B,gemini-2.0-flash-001 (default),7800,7359,not linked (older generator),not linked (older generator),missed a flip,CASE 1,CASE 2,2,0,2,MEDIUM,answer first
+B,gemini-2.0-flash-001 (default),11961,5685,light swapped,utilitarianism,predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,MEDIUM,answer last
+B,gemini-2.0-flash-001 (default),14018,2594,counts only,fitness,predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,MEDIUM,answer first
+B,gemini-2.0-flash-001 (default),6476,6014,side swapped,fitness,predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,MEDIUM,answer first
+B,gemini-2.0-flash-001 (default),654,270,counts only,gender,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,HIGH,answer first
+B,gpt-4o-mini (default),10037,3104,side swapped,age,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,HIGH,answer last
+B,gpt-4o-mini (default),13931,9166,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,HIGH,answer first
+B,gpt-4o-mini (default),3134,12340,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,MEDIUM,answer first
+B,gpt-4o-mini (default),7909,574,dimension changed,fitness,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,HIGH,answer first
+B,gpt-4o-mini (default),12270,13748,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,MEDIUM,answer first
+B,gpt-4o-mini (default),12099,11726,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,MEDIUM,answer first
+B,gpt-4o-mini (default),4117,6800,light swapped,utilitarianism,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,HIGH,answer last
+B,gpt-4o-mini (default),7354,10738,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,HIGH,answer first
+B,gpt-4o-mini (default),9926,11484,counts only,gender,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,MEDIUM,answer first
+B,gpt-4o-mini (default),7016,2026,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,HIGH,answer last
+B,gpt-4o-mini (default),1151,14383,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,MEDIUM,answer first
+B,gpt-4o-mini (default),2546,13046,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,HIGH,answer first
+B,gpt-4o-mini (default),5454,2591,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,MEDIUM,answer last
+B,gpt-4o-mini (default),5255,4321,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,HIGH,answer last
+B,gpt-4o-mini (default),6861,6755,side swapped,gender,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,MEDIUM,answer first
+B,gpt-4o-mini (default),1052,5679,counts only,gender,predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,HIGH,answer first
+B,gpt-4o-mini (default),246,12210,side swapped,age,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,HIGH,answer last
+B,gpt-4o-mini (default),11955,6313,counts only,fitness,predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,HIGH,answer first
+B,gpt-4o-mini (default),13538,8134,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,MEDIUM,answer first
+B,gpt-4o-mini (default),2043,6440,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,MEDIUM,answer last
+B,gpt-4o-mini (default),3645,7725,counts only,gender,predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,HIGH,answer first
+B,gpt-4o-mini (default),13773,8434,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,HIGH,answer last
+B,gpt-4o-mini (default),604,13164,light swapped,gender,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,HIGH,answer first
+B,gpt-4o-mini (default),8261,3283,dimension changed,utilitarianism,missed a flip,CASE 1,CASE 2,2,0,2,HIGH,answer last
+B,gpt-4o-mini (default),13893,3183,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,HIGH,answer first
+B,gpt-4o-mini (default),4665,4212,counts only,age,predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,HIGH,answer last
+B,gpt-4o-mini (default),12296,13333,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,HIGH,answer first
+B,gpt-4o-mini (default),11753,11099,not linked (older generator),not linked (older generator),predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,MEDIUM,answer last
+B,gpt-4o-mini (default),11398,338,side swapped,gender,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,HIGH,answer last
+B,gpt-4o-mini (default),9469,9515,light + side swapped,gender,predicted a flip that didn't happen,CASE 1,CASE 1,2,0,2,MEDIUM,answer last
+B,gpt-4o-mini (default),11191,8296,counts only,fitness,predicted a flip that didn't happen,CASE 2,CASE 2,2,0,2,HIGH,answer first

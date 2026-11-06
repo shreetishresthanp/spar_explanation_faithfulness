@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moral Machines Explorer</title>
+<style>
+  :root {
+    color-scheme: light;
+    --surface: #fcfcfb; --card: #ffffff; --ink: #0b0b0b; --muted: #52514e; --line: #e4e3df;
+    --accent: #2a78d6; --accent-soft: #eef4fc; --mark: #fde8a8;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--surface); color: var(--ink);
+         font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { position: sticky; top: 0; z-index: 10; background: var(--surface);
+           border-bottom: 1px solid var(--line); padding: 12px 16px 0; }
+  header h1 { font-size: 18px; margin: 0 0 8px; }
+  nav { display: flex; gap: 4px; overflow-x: auto; }
+  nav button { font: inherit; background: none; border: 0; border-bottom: 2px solid transparent;
+               padding: 8px 12px; color: var(--muted); cursor: pointer; white-space: nowrap; }
+  nav button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); font-weight: 600; }
+  section.tab { scroll-margin-top: 120px; }
+  main { max-width: 1120px; margin: 0 auto; padding: 16px; }
+  h2 { font-size: 17px; margin: 32px 0 4px; }
+  h3 { font-size: 16px; margin: 0 0 4px; }
+  h4 { font-size: 13px; margin: 16px 0 4px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+  .explain { color: var(--muted); max-width: 78ch; margin: 4px 0 8px; }
+  .explain b, .explain strong { color: var(--ink); }
+  .fig { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 4px; margin: 8px 0 16px; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 12px 0; }
+  .kpi { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+  .kpi b { display: block; font-size: 28px; line-height: 1.2; font-variant-numeric: tabular-nums; }
+  .kpi span { color: var(--muted); font-size: 13px; }
+  ul.findings { max-width: 82ch; padding-left: 20px; }
+  ul.findings li { margin: 6px 0; }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: end; margin: 8px 0 12px; }
+  .controls label { display: flex; flex-direction: column; font-size: 12px; color: var(--muted); gap: 2px; }
+  .controls select, .controls button { font: inherit; padding: 6px 8px; border: 1px solid var(--line);
+                                       border-radius: 6px; background: var(--card); color: var(--ink); max-width: 100%; }
+  .controls button { cursor: pointer; }
+  #case-select { min-width: min(520px, 100%); }
+  .case { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 16px; }
+  .meta { color: var(--muted); font-size: 13px; margin: 0 0 8px; }
+  .note { background: var(--accent-soft); border-left: 3px solid var(--accent); padding: 10px 12px; margin: 8px 0; border-radius: 0 6px 6px 0; }
+  .verdict { margin: 8px 0; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 760px) { .cols { grid-template-columns: 1fr; } }
+  .scenario { white-space: pre-wrap; font-size: 13.5px; background: var(--surface); border: 1px solid var(--line);
+              border-radius: 6px; padding: 10px; margin: 0; }
+  mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1px; }
+  table { border-collapse: collapse; font-size: 14px; margin: 4px 0; }
+  th, td { text-align: left; padding: 4px 14px 4px 0; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; }
+  details { margin: 8px 0; }
+  .table-scroll { overflow-x: auto; max-width: 100%; }
+  .eg-yes { font-weight: 600; }
+  .label-box { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: end; background: var(--accent-soft);
+               border-radius: 6px; padding: 10px 12px; margin: 12px 0; }
+  .label-box label { display: flex; flex-direction: column; font-size: 12px; color: var(--muted); gap: 2px; flex: 1 1 220px; }
+  .label-box select, .label-box textarea { font: inherit; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px;
+                                           background: var(--card); color: var(--ink); width: 100%; }
+  .label-box textarea { min-height: 60px; resize: vertical; }
+  .saved { font-size: 12px; color: var(--muted); }
+  summary { cursor: pointer; color: var(--accent); }
+  details pre, details p { white-space: pre-wrap; font-size: 13.5px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Moral Machines explorer</h1>
+  <nav role="tablist">
+    <button role="tab" data-tab="tldr" aria-selected="true">TL;DR</button>
+    <button role="tab" data-tab="shared" aria-selected="false">Shared failures</button>
+    <button role="tab" data-tab="misled" aria-selected="false">Explanation misled</button>
+    <button role="tab" data-tab="coverage" aria-selected="false">Coverage</button>
+    <button role="tab" data-tab="raw" aria-selected="false">Raw scenario distributions</button>
+    <button role="tab" data-tab="egregious" aria-selected="false">Egregious unfaithfulness</button>
+  </nav>
+</header>
+<main>
+  <section class="tab" id="tldr">__TLDR__</section>
+  <section class="tab" id="shared" hidden>__SHARED__</section>
+  <section class="tab" id="misled" hidden>__MISLED__</section>
+  <section class="tab" id="coverage" hidden>__COVERAGE__</section>
+  <section class="tab" id="raw" hidden>__RAW__</section>
+  <section class="tab" id="egregious" hidden>__EGREGIOUS__</section>
+</main>
+<script>const CASES = __CASES__;</script>
+<script>const PAIRS_BY_VIEW = __PAIRS__;
+const EXPL = __EXPL__;
+const MISLED = __MISLED_DATA__;</script>
+<script>
+// ---- tabs ----
+function showTab(name) {
+  document.querySelectorAll("section.tab").forEach(s => s.hidden = s.id !== name);
+  document.querySelectorAll("nav button").forEach(b => b.setAttribute("aria-selected", b.dataset.tab === name));
+  window.dispatchEvent(new Event("resize"));  // plotly figures drawn while hidden need a resize
+  try { localStorage.setItem("mm-tab", name); } catch (e) {}
+}
+document.querySelectorAll("nav button").forEach(b => b.addEventListener("click", () => showTab(b.dataset.tab)));
+{
+  let t = location.hash.slice(1);
+  try { t = t || localStorage.getItem("mm-tab"); } catch (e) {}
+  if (t && document.getElementById(t)) showTab(t);
+}
+
+// ---- case browser ----
+const $ = id => document.getElementById(id);
+function fill(sel, values, allLabel) {
+  sel.innerHTML = `<option value="">${allLabel}</option>` + values.map(v => `<option>${v}</option>`).join("");
+}
+if ($("case-view")) {
+  fill($("f-model"), [...new Set(CASES.map(c => c.model))].sort(), "All reference models");
+  fill($("f-change"), [...new Set(CASES.map(c => c.change))].sort(), "Any change");
+  const KINDS = {
+    featured: c => c.featured,
+    all: c => true,
+    misled: c => c.rwo >= 3,
+    shared: c => c.shared >= 3,
+    flipped: c => c.a_orig !== c.a_cf,
+  };
+  let current = [];
+  function applyFilters() {
+    const m = $("f-model").value, ch = $("f-change").value, k = KINDS[$("f-kind").value];
+    current = CASES.filter(c => k(c) && (!m || c.model === m) && (!ch || c.change === ch));
+    $("case-select").innerHTML = current.map((c, i) =>
+      `<option value="${i}">${c.featured ? "★ " + c.title : c.model + " · " + c.change + " · pair " + c.o + "→" + c.c}</option>`).join("");
+    $("case-count").textContent = `${current.length} case${current.length === 1 ? "" : "s"}`;
+    render(0);
+  }
+  function mark(ok) { return ok ? "✓ right" : "✗ wrong"; }
+  function render(i) {
+    const c = current[i];
+    if (!c) { $("case-view").innerHTML = "<p class='explain'>No cases match these filters.</p>"; return; }
+    $("case-select").value = i;
+    const flipped = c.a_orig !== c.a_cf;
+    $("case-view").innerHTML = `
+      <div class="case">
+        <h3>${c.featured ? c.title : c.model}</h3>
+        <p class="meta">Reference model <b>${c.model}</b> · what changed: <b>${c.change}</b> · dimension: ${c.dim}
+          · pair ${c.o} → ${c.c} · egregious for <b>${c.shared} of ${c.n_models}</b> reference models on this pair</p>
+        ${c.note ? `<div class="note">${c.note}</div>` : ""}
+        <p class="verdict">The reference model answered <b>${c.a_orig}</b> on the original and <b>${c.a_cf}</b> on the
+          counterfactual (${flipped ? "<b>it flipped</b>" : "it kept its answer"}). With its explanation,
+          <b>${c.rw} of ${c.preds.length}</b> predictors were right; without it, <b>${c.rwo} of ${c.preds.length}</b>.</p>
+        <div class="cols">
+          <div><h4>Original scenario</h4><pre class="scenario">${c.orig_html}</pre></div>
+          <div><h4>Counterfactual scenario</h4><pre class="scenario">${c.cf_html}</pre></div>
+        </div>
+        <h4>Explanation the predictors saw (reference model, original scenario)</h4>
+        <p>${c.expl}</p>
+        <p class="meta">Most important factors: ${c.factors || "—"} · stated confidence: ${c.conf || "—"}</p>
+        <h4>Predictor answers on the counterfactual (correct answer: ${c.a_cf})</h4>
+        <table><thead><tr><th>Predictor</th><th>With explanation</th><th>Without explanation</th></tr></thead><tbody>
+          ${c.preds.map(p => `<tr><td>${p[0]}</td><td>${p[1]} · ${mark(p[1] === c.a_cf)}</td><td>${p[2]} · ${mark(p[2] === c.a_cf)}</td></tr>`).join("")}
+        </tbody></table>
+        <details><summary>Reference model's own explanation on the counterfactual</summary><p>${c.cf_expl}</p></details>
+        ${c.cot ? `<details><summary>First predictor's reasoning with the explanation (gpt-oss-20b, truncated)</summary><pre>${c.cot}</pre></details>` : ""}
+      </div>`;
+  }
+  ["f-model", "f-change", "f-kind"].forEach(id => $(id).addEventListener("change", applyFilters));
+  $("case-select").addEventListener("change", e => render(+e.target.value));
+  $("prev").addEventListener("click", () => render(Math.max(0, +$("case-select").value - 1)));
+  $("next").addEventListener("click", () => render(Math.min(current.length - 1, +$("case-select").value + 1)));
+  applyFilters();
+}
+// ---- shared-failure spot-check browser ----
+if (document.getElementById("pair-view")) {
+  const KEY = "mm-shared-labels";
+  const VERDICTS = ["", "shared unfaithfulness", "near-tie / indifference", "predictor error", "pair problem", "mixed", "unsure"];
+  let labels = {};
+  try { labels = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(labels)); return true; } catch (e) { return false; } };
+  const pct = v => Math.round(v * 100) + "%";
+  let shown = [];
+  let PAIRS = [];
+  function setView(v) {
+    document.querySelectorAll(".shared-view").forEach(d => d.hidden = d.dataset.view !== v);
+    window.dispatchEvent(new Event("resize"));  // plotly figures drawn while hidden need a resize
+    PAIRS = PAIRS_BY_VIEW[v] || [];
+    try { localStorage.setItem("mm-shared-view", v); } catch (e) {}
+    applyPairFilter();
+  }
+  function applyPairFilter() {
+    const f = $("pair-filter").value;
+    shown = PAIRS.filter(p => !f || (f === "unlabelled" ? !(labels[p.id] && labels[p.id].verdict)
+                                 : f === "other" ? p.change !== "counts only" : p.change === f));
+    $("pair-select").innerHTML = shown.map((p, i) => {
+      const done = labels[p.id] && labels[p.id].verdict ? "✓ " : "";
+      return `<option value="${i}">${done}${p.o}→${p.c} · ${p.dim} · ${p.change} · ${p.n_eg}/${p.n_models} configs · set ${p.sets}</option>`;
+    }).join("");
+    $("pair-count").textContent = `${shown.length} of ${PAIRS.length}`;
+    renderPair(0);
+  }
+  function renderPair(i) {
+    const p = shown[i];
+    if (!p) { $("pair-view").innerHTML = "<p class='explain'>No pairs match this filter.</p>"; return; }
+    $("pair-select").value = i;
+    const lab = labels[p.id] || {};
+    $("pair-view").innerHTML = `
+      <div class="case">
+        <h3>Pair ${p.o} → ${p.c}</h3>
+        <p class="meta">Dimension: <b>${p.dim}</b> · what changed: <b>${p.change}</b> · answered by pair set <b>${p.sets}</b>
+          · egregious for <b>${p.n_eg} of ${p.n_models}</b> configs · <b>${p.n_flip} of ${p.n_models}</b> flipped their answer · predictor answers wrong:
+          <b>${pct(p.wrong_with)}</b> with the explanation, ${pct(p.wrong_without)} without</p>
+        <div class="cols">
+          <div><h4>Original scenario</h4><pre class="scenario">${p.orig_html}</pre></div>
+          <div><h4>Counterfactual scenario</h4><pre class="scenario">${p.cf_html}</pre></div>
+        </div>
+        <div class="label-box">
+          <label>Your verdict<select id="lab-verdict">${VERDICTS.map(v => `<option${v === (lab.verdict || "") ? " selected" : ""}>${v}</option>`).join("")}</select></label>
+          <label>Notes<textarea id="lab-notes" placeholder="Which principle, which models, what to resample…">${lab.notes || ""}</textarea></label>
+          <span class="saved" id="lab-saved"></span>
+        </div>
+        <h4>Each reference model on this pair (egregious rows first)</h4>
+        <div class="table-scroll"><table><thead><tr><th>Reference config</th><th>Set</th><th>Original → counterfactual</th>
+          <th>Predictors right with explanation</th><th>…without</th><th></th></tr></thead><tbody>
+          ${p.rows.map(r => `<tr><td>${r.model}</td><td>${r.set}</td><td>${r.a_orig} → ${r.a_cf} ${r.a_orig !== r.a_cf ? "(flipped)" : "(kept)"}</td>
+            <td>${r.rw} of ${r.n}</td><td>${r.rwo} of ${r.n}</td><td class="eg-yes">${r.eg ? "✗ egregious" : ""}</td></tr>`).join("")}
+        </tbody></table></div>
+        <p class="meta">Share of each predictor's answers that are wrong with the explanation, across these models:
+          ${p.by_pred.map(([n, v]) => `${n} ${pct(v)}`).join(" · ")}</p>
+        <h4>Explanations (original scenario; the predictors saw these)</h4>
+        ${p.rows.map(r => { const [expl, factors, conf, cf] = EXPL[r.k] || ["", "", "", ""];
+          return `<details${r.eg ? " open" : ""}><summary>${r.model} (set ${r.set}): answered ${r.a_orig}, then ${r.a_cf}
+            ${r.eg ? "· egregious" : ""}</summary>
+          <p>${expl}</p><p class="meta">Most important factors: ${factors || "—"} · stated confidence: ${conf || "—"}</p>
+          <p class="meta"><b>Its explanation on the counterfactual:</b> ${cf}</p></details>`; }).join("")}
+      </div>`;
+    const store = () => {
+      labels[p.id] = { verdict: $("lab-verdict").value, notes: $("lab-notes").value };
+      $("lab-saved").textContent = save() ? "saved in this browser" : "couldn't save (storage blocked): download before leaving";
+      const opt = $("pair-select").options[i];
+      if (opt) opt.textContent = (labels[p.id].verdict ? "✓ " : "") + opt.textContent.replace(/^✓ /, "");
+    };
+    $("lab-verdict").addEventListener("change", store);
+    $("lab-notes").addEventListener("input", store);
+  }
+  function downloadLabels() {
+    const esc = s => `"${String(s ?? "").replace(/"/g, '""')}"`;
+    const head = ["pair_id", "original_idx", "counterfactual_idx", "dimension", "what_changed", "n_egregious", "n_models",
+                  "n_flipped", "verdict", "notes"];
+    const all = new Map();
+    Object.values(PAIRS_BY_VIEW).flat().forEach(p => all.set(p.id, p));
+    const lines = [head.join(",")].concat([...all.values()].map(p => [p.id, p.o, p.c, p.dim, p.change, p.n_eg, p.n_models, p.n_flip,
+      (labels[p.id] || {}).verdict, (labels[p.id] || {}).notes].map(esc).join(",")));
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([lines.join("\n")], { type: "text/csv" }));
+    a.download = "mm_shared_failure_labels.csv";
+    a.click();
+  }
+  $("pair-filter").addEventListener("change", applyPairFilter);
+  $("pair-select").addEventListener("change", e => renderPair(+e.target.value));
+  $("pair-prev").addEventListener("click", () => renderPair(Math.max(0, +$("pair-select").value - 1)));
+  $("pair-next").addEventListener("click", () => renderPair(Math.min(shown.length - 1, +$("pair-select").value + 1)));
+  $("pair-download").addEventListener("click", downloadLabels);
+  $("shared-view").addEventListener("change", e => setView(e.target.value));
+  let v0 = $("shared-view").value;
+  try { const s = localStorage.getItem("mm-shared-view"); if (s && PAIRS_BY_VIEW[s]) v0 = s; } catch (e) {}
+  $("shared-view").value = v0;
+  setView(v0);
+}
+// ---- explanation-misled browser ----
+if (document.getElementById("m-view")) {
+  const KEY = "mm-misled-labels";
+  const VERDICTS = ["", "stated principle violated", "overstated factor", "hidden cause", "near-tie", "predictor misread",
+                    "pair problem", "mixed", "unsure"];
+  let labels = {};
+  try { labels = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(labels)); return true; } catch (e) { return false; } };
+  const uniq = k => [...new Set(MISLED.map(r => r[k]))].sort();
+  fill($("m-config"), uniq("config"), "All reference configs");
+  fill($("m-dir"), uniq("direction"), "Both directions");
+  fill($("m-change"), uniq("change"), "Any change");
+  let rows = [];
+  function applyM() {
+    const s = $("m-set").value, cf = $("m-config").value, dr = $("m-dir").value, ch = $("m-change").value;
+    rows = MISLED.filter(r => (!s || r.set === s) && (!cf || r.config === cf) && (!dr || r.direction === dr) && (!ch || r.change === ch));
+    $("m-select").innerHTML = rows.map((r, i) => `<option value="${i}">${labels[r.id] && labels[r.id].verdict ? "✓ " : ""}` +
+      `${r.config} · set ${r.set} · ${r.change} · pair ${r.o}→${r.c}</option>`).join("");
+    $("m-count").textContent = `${rows.length} of ${MISLED.length}`;
+    renderM(0);
+  }
+  function renderM(i) {
+    const r = rows[i];
+    if (!r) { $("m-view").innerHTML = "<p class='explain'>No rows match these filters.</p>"; return; }
+    $("m-select").value = i;
+    const lab = labels[r.id] || {};
+    const ok = a => a === r.a_cf ? "✓ right" : "✗ wrong";
+    $("m-view").innerHTML = `
+      <div class="case">
+        <h3>${r.config} · pair set ${r.set}</h3>
+        <p class="meta">Pair ${r.o} → ${r.c} · what changed: <b>${r.change}</b> · dimension: ${r.dim} · ${r.fmt} ·
+          stated confidence: ${r.conf}</p>
+        <p class="verdict">The reference model answered <b>${r.a_orig}</b> on the original and <b>${r.a_cf}</b> on the
+          counterfactual, so the explanation <b>${r.direction}</b>. Without the explanation <b>${r.rwo} of ${r.n}</b> predictors
+          were right; with it, <b>${r.rw} of ${r.n}</b>.</p>
+        <div class="cols">
+          <div><h4>Original scenario</h4><pre class="scenario">${r.orig_html}</pre></div>
+          <div><h4>Counterfactual scenario</h4><pre class="scenario">${r.cf_html}</pre></div>
+        </div>
+        <div class="label-box">
+          <label>Your verdict<select id="m-verdict">${VERDICTS.map(v => `<option${v === (lab.verdict || "") ? " selected" : ""}>${v}</option>`).join("")}</select></label>
+          <label>Notes<textarea id="m-notes" placeholder="Which sentence misled the predictors? What did the model actually do?">${lab.notes || ""}</textarea></label>
+          <span class="saved" id="m-saved"></span>
+        </div>
+        <h4>Explanation the predictors saw (reference model, original scenario)</h4>
+        <p>${r.expl}</p>
+        <p class="meta">Most important factors: ${r.factors || "—"}</p>
+        <h4>Predictor answers on the counterfactual (correct answer: ${r.a_cf})</h4>
+        <div class="table-scroll"><table><thead><tr><th>Predictor</th><th>Without explanation</th><th>With explanation</th></tr></thead><tbody>
+          ${r.preds.map(p => `<tr><td>${p[0]}</td><td>${p[2]} · ${ok(p[2])}</td><td>${p[1]} · ${ok(p[1])}</td></tr>`).join("")}
+        </tbody></table></div>
+        <details><summary>Reference model's own explanation on the counterfactual</summary><p>${r.cf_expl}</p></details>
+        ${r.cot ? `<details><summary>${r.cot_by}'s reasoning with the explanation (truncated)</summary><pre>${r.cot}</pre></details>` : ""}
+      </div>`;
+    const store = () => {
+      labels[r.id] = { verdict: $("m-verdict").value, notes: $("m-notes").value };
+      $("m-saved").textContent = save() ? "saved in this browser" : "couldn't save (storage blocked): download before leaving";
+      const opt = $("m-select").options[i];
+      if (opt) opt.textContent = (labels[r.id].verdict ? "✓ " : "") + opt.textContent.replace(/^✓ /, "");
+    };
+    $("m-verdict").addEventListener("change", store);
+    $("m-notes").addEventListener("input", store);
+  }
+  function downloadM() {
+    const esc = s => `"${String(s ?? "").replace(/"/g, '""')}"`;
+    const head = ["pair_set", "reference_config", "original_idx", "counterfactual_idx", "what_changed", "dimension", "direction",
+                  "right_without", "n_predictors", "verdict", "notes"];
+    const lines = [head.join(",")].concat(MISLED.map(r => [r.set, r.config, r.o, r.c, r.change, r.dim, r.direction, r.rwo, r.n,
+      (labels[r.id] || {}).verdict, (labels[r.id] || {}).notes].map(esc).join(",")));
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([lines.join("\n")], { type: "text/csv" }));
+    a.download = "mm_explanation_misled_labels.csv";
+    a.click();
+  }
+  ["m-set", "m-config", "m-dir", "m-change"].forEach(id => $(id).addEventListener("change", applyM));
+  $("m-select").addEventListener("change", e => renderM(+e.target.value));
+  $("m-prev").addEventListener("click", () => renderM(Math.max(0, +$("m-select").value - 1)));
+  $("m-next").addEventListener("click", () => renderM(Math.min(rows.length - 1, +$("m-select").value + 1)));
+  $("m-download").addEventListener("click", downloadM);
+  applyM();
+}
+</script>
+</body>
+</html>

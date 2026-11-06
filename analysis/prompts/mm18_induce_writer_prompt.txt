@@ -1,0 +1,9 @@
+Here are decisions by one evaluator. Describe how it decides, in ≤150 words of if/then priorities, plus 3–5 factors.
+
+The decisions come in pairs (A and B) of related scenarios. Each scenario is shown with its text, followed by the evaluator's answer.
+
+Return only a JSON object, with no other text:
+{"text": "<how it decides, at most 150 words>", "factors": ["<factor>", "..."]}
+
+Decisions:
+{decisions}

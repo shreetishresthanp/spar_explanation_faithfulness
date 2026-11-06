@@ -1,0 +1,12 @@
+tie_label,,clear,clear,near-tie,near-tie
+cited_label,,cited,uncited,cited,uncited
+model,change_size,,,,
+GPT-5.2,counts only (net unchanged),18050,2841,1001,25
+GPT-5.2,one rule feature,42440,2417,3378,53
+GPT-5.2,several rule features,14024,351,2389,9
+Gemini 3 Flash,counts only (net unchanged),16604,9876,3385,1591
+Gemini 3 Flash,one rule feature,51271,5922,9119,630
+Gemini 3 Flash,several rule features,17060,220,4764,90
+Gemma 3 27B,counts only (net unchanged),2693,11984,707,2081
+Gemma 3 27B,one rule feature,21572,10759,3913,939
+Gemma 3 27B,several rule features,10075,2687,727,244

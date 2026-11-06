@@ -1,0 +1,19 @@
+model,group,pair_set,usable_pairs,predictors
+Qwen 3 0.6B,open-weight,B,612,5
+Qwen 3 1.7B,open-weight,B,634,5
+Qwen 3 4B,open-weight,B,982,5
+Qwen 3 8B,open-weight,B,1000,5
+Qwen 3 14B,open-weight,B,1000,5
+Qwen 3 32B,open-weight,B,1000,5
+Gemma 3 1B,open-weight,B,997,5
+Gemma 3 4B,open-weight,B,514,5
+Gemma 3 12B,open-weight,B,533,5
+Gemma 3 27B,open-weight,B,999,5
+GPT-5 Nano,proprietary,A,172,5
+GPT-5 Mini,proprietary,A,931,5
+GPT-5.2,proprietary,A,840,5
+Claude Haiku 4.5,proprietary,A,995,5
+Claude Sonnet 4.5,proprietary,A,999,5
+Claude Opus 4.5,proprietary,A,1000,5
+Gemini 3 Flash,proprietary,A,998,5
+Gemini 3 Pro,proprietary,A,997,5

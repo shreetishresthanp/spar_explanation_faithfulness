@@ -1,0 +1,27 @@
+config,pair_set,files,mm_rows_in_files,mm_rows_deduplicated,mm_rows_usable,unique_original_questions,unique_pairs,dropped_no_cf_answer,pairs_in_its_pair_set,coverage_of_pair_set
+claude-haiku-4.5 (medium),A,claude_4_5_predictions,997,997,995,997,997,2,1000,0.995
+claude-opus-4.5 (medium),A,claude_4_5_predictions,1000,1000,1000,1000,1000,0,1000,1.0
+claude-sonnet-4.5 (high),A,sonnet_itc_predictions,1000,1000,1000,1000,1000,0,1000,1.0
+claude-sonnet-4.5 (low),A,sonnet_itc_predictions,1000,1000,999,1000,1000,1,1000,0.999
+claude-sonnet-4.5 (medium),A,"claude_4_5_predictions, sonnet_itc_predictions",2000,1000,999,1000,1000,1,1000,0.999
+claude-sonnet-4.5 (none),A,sonnet_itc_predictions,1000,1000,1000,1000,1000,0,1000,1.0
+gemini-3-flash-preview (medium),A,gemini_3_predictions,1000,1000,998,1000,1000,2,1000,0.998
+gemini-3-pro-preview (medium),A,gemini_3_predictions,998,998,997,998,998,1,1000,0.997
+gpt-5-mini (medium),A,gpt_5_predictions,967,967,931,967,967,36,1000,0.931
+gpt-5-nano (medium),A,gpt_5_predictions,365,365,172,365,365,193,1000,0.172
+gpt-5.2 (high),A,gpt_5_2_itc_predictions,891,891,803,891,891,88,1000,0.803
+gpt-5.2 (low),A,gpt_5_2_itc_predictions,878,878,772,878,878,106,1000,0.772
+gpt-5.2 (medium),A,"gpt_5_2_itc_predictions, gpt_5_predictions",1814,907,840,907,907,67,1000,0.84
+Qwen3-0.6B (True),B,qwen_3_predictions_latest,747,747,612,747,747,135,1000,0.612
+Qwen3-1.7B (True),B,qwen_3_predictions_latest,746,746,634,746,746,112,1000,0.634
+Qwen3-14B (True),B,qwen_3_predictions_latest,1000,1000,1000,1000,1000,0,1000,1.0
+Qwen3-32B (True),B,qwen_3_predictions_latest,1000,1000,1000,1000,1000,0,1000,1.0
+Qwen3-4B (True),B,qwen_3_predictions_latest,987,987,982,987,987,5,1000,0.982
+Qwen3-8B (True),B,qwen_3_predictions_latest,1000,1000,1000,1000,1000,0,1000,1.0
+gemini-2.0-flash-001 (default),B,extra_three_ref_models_predictions,995,995,993,995,995,2,1000,0.993
+gemma-3-12b-it (default),B,gemma_3_predictions,578,578,533,578,578,45,1000,0.533
+gemma-3-1b-it (default),B,gemma_3_predictions,998,998,997,998,998,1,1000,0.997
+gemma-3-27b-it (default),B,gemma_3_predictions,1000,1000,999,1000,1000,1,1000,0.999
+gemma-3-4b-it (default),B,gemma_3_predictions,514,514,514,514,514,0,1000,0.514
+gpt-4o-mini (default),B,extra_three_ref_models_predictions,998,998,997,998,998,1,1000,0.997
+gpt-5.2 (none),B,extra_three_ref_models_predictions,925,925,882,925,925,43,1000,0.882

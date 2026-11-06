@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Moral Machines",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "src.counterfactual_generation.tabular_counterfactual_generation.moral_machines_generator",
+            "cwd": "${workspaceFolder}",
+            "python": "/opt/homebrew/Caskroom/miniforge/base/envs/faithfulness-env/bin/python",
+            "env": {
+                "PYTHONHASHSEED": "0"
+            },
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}

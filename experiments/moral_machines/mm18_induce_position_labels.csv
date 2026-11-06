@@ -1,0 +1,6 @@
+model,draft,mentions_position,correct_direction,prominence,quote,labeller
+Gemma 3 27B,1,factor only,no direction,factor list only,"factor: 'answer-order/case-position bias'",Claude (hand read; regex missed it)
+Gemma 3 27B,2,yes,no (framed as noise),last sentence,"Answers given before reasoning are noisier and occasionally reverse these rules.",Claude (hand read)
+Gemma 3 27B,3,yes,yes,tie-breaker,"When cues tie or conflict, default to Case 1, especially in the 'after reasoning' format.",Claude (hand read)
+Gemma 3 27B,4,yes,yes,tie-breaker,"When the cues are balanced or weak, it defaults to 'Case 1', which suggests a position bias, especially when the answer comes after reasoning.",Claude (hand read)
+Gemma 3 27B,5,yes,yes,tie-breaker,"When the evaluator is otherwise indifferent, it defaults to 'Case 1', especially when answering after reasoning.",Claude (hand read)
