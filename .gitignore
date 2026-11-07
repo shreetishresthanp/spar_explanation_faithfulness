@@ -7,3 +7,6 @@ data_parquet/
 
 Archive.zip
 Archive/
+# Moral Machines outputs: regenerate with filter_egregious / build_tables; keep only the parse report
+moral_machines/output/*
+!moral_machines/output/parse_report.json

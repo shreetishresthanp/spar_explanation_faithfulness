@@ -1,0 +1,189 @@
+{
+  "n_rows": 25398,
+  "rows_per_file": {
+    "claude_4_5_predictions.parquet": 2997,
+    "extra_three_ref_models_predictions.parquet": 2918,
+    "gemini_3_predictions.parquet": 1998,
+    "gemma_3_predictions.parquet": 3090,
+    "gpt_5_2_itc_predictions.parquet": 2676,
+    "gpt_5_predictions.parquet": 2239,
+    "qwen_3_predictions_latest.parquet": 5480,
+    "sonnet_itc_predictions.parquet": 4000
+  },
+  "n_texts": 50796,
+  "n_unique_texts": 3286,
+  "n_unique_pairs": 1858,
+  "exact_rebuild_matches": 50796,
+  "exact_rebuild_share": 1.0,
+  "whitespace_only_matches": 0,
+  "whitespace_only_examples": [],
+  "parse_errors": 0,
+  "parse_error_examples": [],
+  "confident_theme_share": 1.0,
+  "theme_counts_unique_texts": {
+    "gender": 893,
+    "species": 128,
+    "social_value": 1284,
+    "utilitarianism": 178,
+    "age": 401,
+    "fitness": 402
+  },
+  "pair_setting_changes": {
+    "layout_differs": 0,
+    "case1_action_differs": 0,
+    "is_law_differs": 0
+  },
+  "raw_csv_check": {
+    "join": "question_idx = CSV row index",
+    "rows_checked": 50796,
+    "raw_match_rows": 43610,
+    "raw_match_share": 0.8585321678872352,
+    "same_run": true,
+    "text_differs_rows": 7186,
+    "not_checked_rows": 0,
+    "per_file": {
+      "claude_4_5_predictions.parquet": {
+        "raw_match": 5994
+      },
+      "extra_three_ref_models_predictions.parquet": {
+        "raw_match": 4000,
+        "text_differs": 1836
+      },
+      "gemini_3_predictions.parquet": {
+        "raw_match": 3996
+      },
+      "gemma_3_predictions.parquet": {
+        "raw_match": 4319,
+        "text_differs": 1861
+      },
+      "gpt_5_2_itc_predictions.parquet": {
+        "raw_match": 5352
+      },
+      "gpt_5_predictions.parquet": {
+        "raw_match": 4478
+      },
+      "qwen_3_predictions_latest.parquet": {
+        "raw_match": 7471,
+        "text_differs": 3489
+      },
+      "sonnet_itc_predictions.parquet": {
+        "raw_match": 8000
+      }
+    },
+    "settings_mismatches": 0,
+    "settings_mismatch_examples": [],
+    "confident_wrong_theme_rows": 0,
+    "inferred_vs_true_theme_rows": {
+      "age | true=age": 6193,
+      "fitness | true=fitness": 6293,
+      "gender | true=gender": 16062,
+      "social_value | true=social_value": 9106,
+      "species | true=species": 2580,
+      "utilitarianism | true=utilitarianism": 3376
+    },
+    "text_differs_breakdown": {
+      "true=social_value | inferred=social_value | layout/action/lights agree": 7186
+    }
+  },
+  "per_file_table": {
+    "claude_4_5_predictions.parquet": {
+      "rows": 2997,
+      "texts": 5994,
+      "unique_texts": 2000,
+      "unique_pairs": 1000,
+      "exact": 5994,
+      "whitespace_only": 0,
+      "parse_errors": 0,
+      "raw_match": 5994,
+      "text_differs_from_csv": 0
+    },
+    "extra_three_ref_models_predictions.parquet": {
+      "rows": 2918,
+      "texts": 5836,
+      "unique_texts": 2000,
+      "unique_pairs": 1000,
+      "exact": 5836,
+      "whitespace_only": 0,
+      "parse_errors": 0,
+      "raw_match": 4000,
+      "text_differs_from_csv": 1836
+    },
+    "gemini_3_predictions.parquet": {
+      "rows": 1998,
+      "texts": 3996,
+      "unique_texts": 2000,
+      "unique_pairs": 1000,
+      "exact": 3996,
+      "whitespace_only": 0,
+      "parse_errors": 0,
+      "raw_match": 3996,
+      "text_differs_from_csv": 0
+    },
+    "gemma_3_predictions.parquet": {
+      "rows": 3090,
+      "texts": 6180,
+      "unique_texts": 2000,
+      "unique_pairs": 1000,
+      "exact": 6180,
+      "whitespace_only": 0,
+      "parse_errors": 0,
+      "raw_match": 4319,
+      "text_differs_from_csv": 1861
+    },
+    "gpt_5_2_itc_predictions.parquet": {
+      "rows": 2676,
+      "texts": 5352,
+      "unique_texts": 1986,
+      "unique_pairs": 993,
+      "exact": 5352,
+      "whitespace_only": 0,
+      "parse_errors": 0,
+      "raw_match": 5352,
+      "text_differs_from_csv": 0
+    },
+    "gpt_5_predictions.parquet": {
+      "rows": 2239,
+      "texts": 4478,
+      "unique_texts": 2000,
+      "unique_pairs": 1000,
+      "exact": 4478,
+      "whitespace_only": 0,
+      "parse_errors": 0,
+      "raw_match": 4478,
+      "text_differs_from_csv": 0
+    },
+    "qwen_3_predictions_latest.parquet": {
+      "rows": 5480,
+      "texts": 10960,
+      "unique_texts": 2000,
+      "unique_pairs": 1000,
+      "exact": 10960,
+      "whitespace_only": 0,
+      "parse_errors": 0,
+      "raw_match": 7471,
+      "text_differs_from_csv": 3489
+    },
+    "sonnet_itc_predictions.parquet": {
+      "rows": 4000,
+      "texts": 8000,
+      "unique_texts": 2000,
+      "unique_pairs": 1000,
+      "exact": 8000,
+      "whitespace_only": 0,
+      "parse_errors": 0,
+      "raw_match": 8000,
+      "text_differs_from_csv": 0
+    },
+    "TOTAL (unique counts are not additive)": {
+      "rows": 25398,
+      "texts": 50796,
+      "exact": 50796,
+      "whitespace_only": 0,
+      "parse_errors": 0,
+      "raw_match": 43610,
+      "text_differs_from_csv": 7186,
+      "unique_texts": 3286,
+      "unique_pairs": 1858
+    }
+  }
+}

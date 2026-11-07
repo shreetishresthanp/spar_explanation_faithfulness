@@ -1,4 +1,0 @@
-model,leaves,words,train_acc,heldout_cf_acc
-GPT-5.2,6,183,0.8398648648648649,0.84
-Gemini 3 Flash,7,166,0.8496659242761693,0.89
-Gemma 3 27B,8,193,0.8994708994708994,0.94

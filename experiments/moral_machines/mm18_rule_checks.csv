@@ -1,8 +1,0 @@
-check,passed,value
-GPT-5.2: answer_first coefficient ~ 0 (|coef| < 0.25),True,"-0.25 [-0.46, +0.01]"
-Gemini 3 Flash: answer_first coefficient ~ 0 (|coef| < 0.25),True,"-0.21 [-0.41, -0.06]"
-Gemma 3 27B: answer_first coefficient large (|coef| > 0.5),True,-2.27
-Gemma 3 27B: position-only accuracy close to full rule (gap < 5 pts),False,rule 0.921 vs position 0.794
-GPT-5.2: full rule well above position-only (gap > 10 pts),True,rule 0.956 vs position 0.699
-Gemini 3 Flash: full rule well above position-only (gap > 10 pts),True,rule 0.930 vs position 0.572
-Gemini 3 Pro: full rule well above position-only (gap > 10 pts),True,rule 0.920 vs position 0.558
